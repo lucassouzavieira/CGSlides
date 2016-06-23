@@ -1,50 +1,319 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+	<title>Computação Gráfica</title>
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/simple.css">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Printing and PDF exports -->
+	<script src="js/processing.min.js"></script>
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<h3 style="color: #f7fbfc">Universidade Estadual do Maranhão</h3>
+			<h4 style="color: #f7fbfc"><strong>Bacharelado em Engenharia de Computação</strong></h4>
+			<h5 style="color: #f7fbfc">504 - Computação Gráfica</h5>
+		</section>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+		<section>
+			<h3 style="color: #f7fbfc">Introdução à Computação Gráfica</h3>
+		</section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<section>
+			<h5 style="color: #f7fbfc; text-align: left;"><strong>Definição: </strong></h5>
+			<p style="color: #f7fbfc; text-align: justify;">
+				Conjunto de ferramentas e técnicas para converter dados para ou de um dispositivo gráfico através do computador
+			</p>
+			<h5 style="color: #f7fbfc; text-align: left;"><strong>Origem: </strong></h5>
+			<p style="color: #f7fbfc; text-align: justify;">
+				A partir da 1950. O primeiro computador a possuir recursos gráficos de visualização de dados numéricos foi o
+				<i>Whirlwind I</i>, desenvolvido no MIT.
+			</p>
+			<p style="color: #f7fbfc; text-align: justify;">
+				Em 1959, surge o termo <i>Computer Graphics</i>, criado por Verne Hudson.
+			</p>
+		</section>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+		<section>
+			<h5 style="color: #f7fbfc; text-align: center;"><strong>Breve histórico</strong></h5>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				1965: A General Motors desenvolve o precursor dos programas CAD. No fim da década de 1960, praticamente
+				toda a indústria automobilística e aerospacial utilizava softwares CAD.
+			</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				Na década de 70, muitos pesquisadores desenvolveram algoritmos e técnicas utilizadas até hoje em computação
+				gráfica.<br>
+				A partir de 1980, surgem novas técnicas de iluminação, como o <i>Ray-tracing</i>, e a radiosidade em 1984.
+			</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				A década de 1990 consolidou a computação gráfica por sua aplicação para criação de efeitos de cinema, como
+				os do filme <i>Jurassic Park</i>. <br>
+				O OpenGL surge em 1992. <br>
+			</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				Fotorrealismo, personagens computadorizados e o primeiro longa 3D (<i>Toy Story</i>) em 1995.<br>
+				A NVIDIA lança as primeiras placas gráficas para PC em 1999.
+			</p>
+		</section>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+		<section>
+			<section>
+				<h3 style="color: #f7fbfc">Aplicações da Computação Gráfica</h3>
+				<p style="color: #f7fbfc; text-align: center;">
+					A computação gráfica tem aplicação nos mais variados campos
+				</p>
+			</section>
+			<section data-background="images/Medicina.jpg">
+				<h3 style="color: #F0F1EB; text-align: center"><strong>Medicina<br></strong></h3>
+			</section>
+			<section data-background="images/Arquitetura.jpg">
+				<h3 style="color: #002b36; text-align: right"><strong>Arquitetura<br></strong></h3>
+			</section>
+			<section data-background="images/Engenharia.png">
+				<h3 style="color: #f7fbfc; text-align: right"><strong>Engenharia</strong></h3>
+			</section>
+			<section data-background="images/Geografia.png">
+				<h3 style="color: #F0F1EB; text-align: center"><strong>Geografia</strong></h3>
+			</section>
+			<section data-background="images/Astronomia.jpg">
+				<h3 style="color: #F0F1EB; text-align: left"><strong>Astronomia</strong></h3>
+			</section>
+			<section data-background="images/Entreternimento.jpg">
+				<h3 style="color: #0d99a5; text-align: left"><strong>TV, Cinema, Marketing</strong></h3>
+			</section>
+			<section data-background="images/Games.png">
+				<h3 style="color: #F0F1EB; text-align: center"><strong>Games</strong></h3>
+			</section>
+			<section>
+				<h3 style="color: #F0F1EB; text-align: left"><strong>E muitos outros...</strong></h3>
+			</section>
+		</section>
+
+		<section>
+			<h3 style="color: #f7fbfc; text-align: justify;">Dispositivos Gráficos de Entrada</h3>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Teclado</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Mouse</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Joysticks</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Mesa digitalizadora</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Digitalizador tridimensional</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Capacetes de Realidade Virtual</p>
+		</section>
+
+		<section>
+			<h3 style="color: #f7fbfc; text-align: justify;">Dispositivos Gráficos de Saída</h3>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Impressoras</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Plotters</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Monitores</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Head Mounted Displays</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">Placas de Vídeo</p>
+		</section>
+
+		<section>
+			<h3 style="color: #f7fbfc; text-align: justify;"><strong>Representação Matricial de Imagens</strong></h3>
+		</section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>Raster</strong></h5>
+			<p  style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				A imagem contém a descrição de cada pixel: posição e cores.
+			</p>
+			<img src="images/Raster.png" style="background-color: #f7fbfc"><img>
+			<p  style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				A imagem é representada em uma matriz bidimensional, onde a posição de cada
+				elemento na matriz é associada ao <i>pixel</i> com as informações de cores correspondentes.
+			</p>
+		</section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>Raster</strong></h5>
+			<img src="images/Raster2.png" style="background-color: #f7fbfc"><img>
+			<p  style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				<i>Detalhe de imagem matricial</i>
+			</p>
+
+		</section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>Raster</strong></h5>
+			<img src="images/Raster3.png" style="background-color: #f7fbfc"><img>
+		</section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>Raster</strong></h5>
+			<p  style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				Formatos comuns de imagem matricial.
+			</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">JPEG</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">GIF</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">BMP</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">PNG</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">TIFF</p>
+		</section>
+
+
+		<section>
+			<h3 style="color: #f7fbfc; text-align: justify;"><strong>Representação Vetorial de Imagens</strong></h3>
+		</section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>Imagem Vetorial</strong></h5>
+			<p  style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				A imagem é descrita por vetores.
+			</p>
+			<img src="images/v2d.png" style="background-color: transparent"><img><br>
+			<img src="images/v3d.png" style="background-color: transparent"><img>
+			<p  style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				Usa primitivas geométricas como pontos, linhas, curvas e polígonos para representar
+				as imagens. As primitivas são determinadas por funções matemáticas.
+
+				As imagens vetoriais não sofrem de problemas de perda de definição ao serem ampliadas,
+				pois as funções matemáticas se adequam bem às tranformações de escala. Outra vantagem é
+				o fato de ocuparem menos espaço.
+			</p>
+		</section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>Comparação: Matricial vs Vetorial</strong></h5>
+			<img src="images/Comparacao.gif" style="background-color: transparent"><img>
+			<img src="images/Compare2.jpg" style="background-color: transparent"><img>
+		</section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>Imagem Vetorial</strong></h5>
+			<p  style="color: #f7fbfc; text-align: justify; font-size: 30px;">
+				Formatos comuns de imagem vetorial.
+			</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">SVG</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">CDR</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">AI</p>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;" class="fragment fade-left">ESS</p>
+		</section>
+
+		<section>
+			<h2 style="color: #f7fbfc; text-align: center;"><strong>OpenGL</strong></h2>
+		</section>
+
+		<section>
+            <h5 style="color: #f7fbfc; text-align: justify;"><strong>OpenGL</strong></h5>
+            <p style="color: #f7fbfc; text-align: justify;">
+                OpenGL é uma API gráfica e não uma plataforma ou linguagem de programação em si.
+                Foi desenvolvida a partir de 1991 como um padrão aberto pela SGI. Rapidamente se tornou
+                padrão no mercado e hoje é adotada por todas as empresas que fabricam hardware gráfico.
+                <br>
+                O OpenGL oferece centenas de funções que permitem o acesso a praticamente todos os
+                recursos do hardware gráfico.
+            </p>
+        </section>
+
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script type="text/javascript" async
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script>
+	// More info https://github.com/hakimel/reveal.js#configuration
+
+	Reveal.initialize({
+		// Display controls in the bottom right corner
+		controls: true,
+		// Display a presentation progress bar
+		progress: true,
+		// Display the page number of the current slide
+		slideNumber: false,
+		// Push each slide change to the browser history
+		history: false,
+		// Enable keyboard shortcuts for navigation
+		keyboard: true,
+		// Enable the slide overview mode
+		overview: true,
+		// Vertical centering of slides
+		center: true,
+		// Enables touch navigation on devices with touch input
+		touch: true,
+		// Loop the presentation
+		loop: false,
+		// Change the presentation direction to be RTL
+		rtl: false,
+		// Randomizes the order of slides each time the presentation loads
+		shuffle: false,
+		// Turns fragments on and off globally
+		fragments: true,
+		// Flags if the presentation is running in an embedded mode,
+		// i.e. contained within a limited portion of the screen
+		embedded: false,
+		// Flags if we should show a help overlay when the questionmark
+		// key is pressed
+		help: true,
+		// Flags if speaker notes should be visible to all viewers
+		showNotes: false,
+		// Number of milliseconds between automatically proceeding to the
+		// next slide, disabled when set to 0, this value can be overwritten
+		// by using a data-autoslide attribute on your slides
+		autoSlide: 0,
+		// Stop auto-sliding after user input
+		autoSlideStoppable: true,
+		// Use this method for navigation when auto-sliding
+		autoSlideMethod: Reveal.navigateNext,
+		// Enable slide navigation via mouse wheel
+		mouseWheel: false,
+		// Hides the address bar on mobile devices
+		hideAddressBar: true,
+		// Opens links in an iframe preview overlay
+		previewLinks: false,
+		// Transition style
+		transition: 'default', // none/fade/slide/convex/concave/zoom
+		// Transition speed
+		transitionSpeed: 'default', // default/fast/slow
+		// Transition style for full page slide backgrounds
+		backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+		// Number of slides away from the current that are visible
+		viewDistance: 3,
+		// - Calculated automatically unless specified
+		// - Set to 0 to disable movement along an axis
+		// Parallax background image
+		parallaxBackgroundImage: 'images/Background-intro2.jpg',
+
+		// Parallax background size
+		parallaxBackgroundSize: '1920px 1080px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+		// Number of pixels to move the parallax background per slide
+		// - Calculated automatically unless specified
+		// - Set to 0 to disable movement along an axis
+		parallaxBackgroundHorizontal: 5,
+		parallaxBackgroundVertical: 5,
+
+		math: {
+			mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+			config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+		},
+
+		// More info https://github.com/hakimel/reveal.js#dependencies
+		dependencies: [
+			{ src: 'plugin/markdown/marked.js' },
+			{ src: 'plugin/markdown/markdown.js' },
+			{ src: 'plugin/notes/notes.js', async: true },
+			{ src: 'plugin/math/math.js', async: true },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+		]
+	});
+</script>
+</body>
 </html>
