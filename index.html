@@ -50,7 +50,7 @@
 		</section>
 
 		<section>
-			<h5 style="color: #f7fbfc; text-align: center;"><strong>Breve histórico</strong></h5>
+			<h5 style="color: #f7fbfc; text-align: center;" class="reveal"><strong>Breve histórico</strong></h5>
 			<p style="color: #f7fbfc; text-align: justify; font-size: 30px;">
 				1965: A General Motors desenvolve o precursor dos programas CAD. No fim da década de 1960, praticamente
 				toda a indústria automobilística e aerospacial utilizava softwares CAD.
@@ -210,15 +210,54 @@
 
 		<section>
             <h5 style="color: #f7fbfc; text-align: justify;"><strong>OpenGL</strong></h5>
-            <p style="color: #f7fbfc; text-align: justify;">
+            <p style="color: #f7fbfc; text-align: justify; font-size: 30px">
                 OpenGL é uma API gráfica e não uma plataforma ou linguagem de programação em si.
                 Foi desenvolvida a partir de 1991 como um padrão aberto pela SGI. Rapidamente se tornou
                 padrão no mercado e hoje é adotada por todas as empresas que fabricam hardware gráfico.
                 <br>
-                O OpenGL oferece centenas de funções que permitem o acesso a praticamente todos os
-                recursos do hardware gráfico.
+                Escrita originalmente em C, o OpenGL oferece centenas de funções que permitem o acesso a
+				praticamente todos os recursos do hardware gráfico.
             </p>
         </section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>Configuração do OpenGL ( C/C++ )</strong></h5>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px">
+				A configuração do OpenGL é simples. Um tutorial de configuração para ambientes Windows (Visual Studio)
+				e também ambientes Linux está disponível em: <br>
+				<a href="https://github.com/LabCGUema/Basico/"><i style="color: #bbbbbb">https://github.com/LabCGUema/Basico/</i></a>
+				<br>
+				<p style="color: #f7fbfc; text-align: justify; font-size: 30px" class="fragment fade-down">
+					As principais bibliotecas utilizadas nos exemplos em C++ são:
+				</p>
+				<p style="color: #f7fbfc; text-align: justify; font-size: 30px" class="fragment fade-up">GLEW:
+					Carrega automáticamente extensões OpenGL <br>
+					<a href="http://glew.sourceforge.net/"><i style="color: #bbbbbb">http://glew.sourceforge.net/</i></a>
+				<p>
+				<p style="color: #f7fbfc; text-align: justify; font-size: 30px" class="fragment fade-up">GLFW:
+					Criação e gerenciamento de janelas e contextos OpenGL <br>
+					<a href="http://www.glfw.org/"><i style="color: #bbbbbb">http://www.glfw.org/</i></a>
+				<p>
+				<p style="color: #f7fbfc; text-align: justify; font-size: 30px" class="fragment fade-up">FreeGlut:
+					Implementação Open Source da biblioteca Glut. Permite que as aplicações
+					OpenGL sejam portáveis entre sistemas operacionais diferentes <br>
+					<a href="http://freeglut.sourceforge.net/"><i style="color: #bbbbbb">http://freeglut.sourceforge.net/</i></a>
+				<p>
+			</p>
+		</section>
+
+		<section>
+			<h5 style="color: #f7fbfc; text-align: justify;"><strong>OpenGL</strong></h5>
+			<p style="color: #f7fbfc; text-align: justify; font-size: 30px">
+				As funções OpenGL foram escritas em C, mas há diversos <i>bindings</i> para
+				diversas outras linguagens de programação como Java, C# e Python. Uma lista completa
+				das linguagens com suporte a desenvolvimento baseado em OpenGL está disponível em: <br>
+				<a href="https://www.opengl.org/wiki/Language_bindings"><i style="color: #bbbbbb">https://www.opengl.org/wiki/Language_bindings</i></a>
+				<br>
+				É importante frisar que tais linguagens acabam em última instância fazendo chamadas às funções C do OpenGL.
+			</p>
+		</section>
+
 
 	</div>
 </div>
